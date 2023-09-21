@@ -8,10 +8,10 @@ const ProductCategories: React.FC = () => {
 const cardHeight = 240; // Adjust the card height as needed
 
   return (
-    <section className=" py-8">
+    <section className=" py-8 px-5" data-aos="fade-up">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-6">Explore Our Categories</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
           <div className="p-4 bg-white rounded-lg shadow-md cursor-pointer ease-in-out delay-150 transform transition-transform hover:scale-110">
             <Image
               src="/DSC_3003.JPG"

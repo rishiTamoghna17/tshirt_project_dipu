@@ -62,7 +62,7 @@ const FeaturedProducts: React.FC = () => {
   };
 
   return (
-    <section className=" py-8">
+    <section className=" py-8 px-5" id="shop" data-aos="fade-up">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-6">
           Featured Products

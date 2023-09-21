@@ -25,10 +25,10 @@ const Navbar: React.FC = () => {
   return (
     <header className="bg-gradient-to-b from-blue-900 via-blue-600 to-blue-300 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl text-white font-extrabold tracking-wider">
+        <h1 className="text-3xl text-white font-extrabold tracking-wider" data-aos="fade-right"  data-aos-duration="1500">
           My T-Shirt Shop
         </h1>
-        <div className=" hidden md:flex  w-[40%] bg-gray-100 p-2 rounded-lg">
+        <div className=" hidden md:flex  w-[40%] bg-gray-100 p-2 rounded-lg" data-aos="fade-down" data-aos-duration="1500">
           <input
             type="text"
             className="outline-none w-full bg-transparent placeholder-gray-600 text-sm"
@@ -131,7 +131,7 @@ const NavItem: React.FC<{ onClick: () => void; mobile?: boolean }> = ({
         mobile ? "py-2" : "space-x-2"
       } transition-transform transform-gpu group hover:scale-110`}
     >
-      <span className="relative group flex flex-col items-center">
+      <span className="relative group flex flex-col items-center" data-aos="fade-left"  data-aos-duration="1500">
         {children}
         <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
       </span>
