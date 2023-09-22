@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './component/Navbar/Navbar'
 import Footer from './component/Footer/Footer'
+import { CartProvider } from './context/CartContext'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
         
-      <body ><Navbar/>{children}
+      <body ><CartProvider><Navbar/> {children}
+      
+      </CartProvider>
       <Footer/>
       </body>
     </html>

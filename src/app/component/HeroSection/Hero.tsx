@@ -11,6 +11,8 @@ const HeroSection: React.FC = () => {
       useClientSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  
   return (
     <section className=" py-16 " data-aos-duration="1000">
       <div className="container mx-auto flex flex-col items-center justify-center text-center">

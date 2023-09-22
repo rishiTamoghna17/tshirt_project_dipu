@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
+import { useCart } from "@/app/context/CartContext";
 interface Product {
   id: number;
   name: string;
@@ -54,11 +55,22 @@ const FeaturedProducts: React.FC = () => {
   const [wishlistClicked, setWishlistClicked] = useState<boolean[]>(
     Array(featuredProducts.length).fill(false)
   );
-
+  const { addToCart } = useCart();
   const handleWishlistClick = (index: number) => {
     const updatedWishlistClicked = [...wishlistClicked];
     updatedWishlistClicked[index] = !updatedWishlistClicked[index];
     setWishlistClicked(updatedWishlistClicked);
+  };
+  const addToCartClicked = (product: Product) => {
+    // Here, you can call the addToCart function from CartContext
+    addToCart({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      discount: product.discount,
+      quantity: 1, // You can start with a quantity of 1, or adjust as needed
+    });
   };
 
   return (
@@ -121,7 +133,7 @@ const FeaturedProducts: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:ring-blue-300">
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:ring-blue-300" onClick={() => addToCartClicked(product)}>
                     Add to Cart
                   </button>
                 </div>
