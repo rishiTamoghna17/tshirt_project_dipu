@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useCart } from "@/app/context/CartContext";
+import Link from "next/link";
 interface Product {
   id: number;
   name: string;
@@ -85,6 +86,7 @@ const FeaturedProducts: React.FC = () => {
               key={product.id}
               className="bg-white rounded-lg shadow-md overflow-hidden transform delay-150 ease-in-out transition-transform hover:scale-110 cursor-pointer"
             >
+              <Link href={`/dashboard/${product.id}`}>
               <Image
                 src={product.image}
                 alt={product.name}
@@ -138,6 +140,7 @@ const FeaturedProducts: React.FC = () => {
                   </button>
                 </div>
               </div>
+              </Link>
             </div>
           ))}
         </div>
