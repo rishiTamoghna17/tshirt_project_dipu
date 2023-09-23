@@ -1,6 +1,9 @@
+
 import React from 'react'
 import Image from 'next/image'
 import ImageGallery from '../ImageGallery'
+import AddToCartButton from '@/app/component/AddToCartButton/AddToCartButton'
+
 
 export default function page({params}:{params:{id:string}}) {
   const product ={
@@ -11,6 +14,8 @@ export default function page({params}:{params:{id:string}}) {
     discount: 60, // 60% off
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   }
+
+
   return (
     <div> <div className="container mx-auto mt-8">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -23,9 +28,7 @@ export default function page({params}:{params:{id:string}}) {
         </h2>
         <p className="text-gray-600">{product.description}</p>
         <p className="text-xl font-semibold mt-4">${product.price}</p>
-        <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:ring-blue-300">
-          Add to Cart
-        </button>
+       <AddToCartButton/>
       </div>
     </div>
   </div></div>

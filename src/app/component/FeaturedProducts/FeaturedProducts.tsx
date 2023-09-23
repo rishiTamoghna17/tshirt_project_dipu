@@ -8,6 +8,8 @@ import { FaHeart } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useCart } from "@/app/context/CartContext";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 interface Product {
   id: number;
   name: string;
@@ -63,6 +65,7 @@ const FeaturedProducts: React.FC = () => {
     setWishlistClicked(updatedWishlistClicked);
   };
   const addToCartClicked = (product: Product) => {
+    toast("Item successfully added")
     // Here, you can call the addToCart function from CartContext
     addToCart({
       id: product.id,
@@ -76,6 +79,7 @@ const FeaturedProducts: React.FC = () => {
 
   return (
     <section className=" py-8 px-5" id="shop" data-aos="fade-up">
+      <ToastContainer />
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-6">
           Featured Products
@@ -94,7 +98,8 @@ const FeaturedProducts: React.FC = () => {
                 width={320} // Adjust image width as needed
                 className="w-full  object-cover"
               />
-              <div className="p-4">
+               </Link>
+              <div  className="p-4">
                 <div className="flex justify-between">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
@@ -134,13 +139,15 @@ const FeaturedProducts: React.FC = () => {
                     </button>
                   </div>
                 </div>
+               
                 <div className="mt-4">
                   <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:ring-blue-300" onClick={() => addToCartClicked(product)}>
                     Add to Cart
                   </button>
+                  
                 </div>
               </div>
-              </Link>
+              
             </div>
           ))}
         </div>
